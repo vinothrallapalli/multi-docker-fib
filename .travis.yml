@@ -6,7 +6,7 @@ before_install:
   - docker build -t vinothrallapalli/reatc-test -f ./web/Dockerfile.dev ./web
 
 script:
-  - docker run vinothrallapalli npm run test -- --coverage
+  - docker run vinothrallapalli/reatc-test npm test -- --coverage
 
 after_success:
   - docker build -t vinothrallapalli/multi-web ./web
